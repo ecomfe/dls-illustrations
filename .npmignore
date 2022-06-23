@@ -1,0 +1,6 @@
+.*
+*.config.js
+src
+test
+build
+output

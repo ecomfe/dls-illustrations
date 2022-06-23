@@ -1,0 +1,42 @@
+{
+  "name": "dls-illustrations",
+  "version": "1.2.0",
+  "description": "Illustrations for Baidu Light DLS.",
+  "scripts": {
+    "prepare": "pnpm generate",
+    "generate": "node -r esm build",
+    "build": "pnpm generate && pnpm -r build",
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
+  },
+  "keywords": [
+    "illustrations",
+    "baidu",
+    "dls"
+  ],
+  "author": "Justineo (justice360@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "bumpp": "^8.2.1",
+    "cssnano": "^5.1.12",
+    "dompurify": "^2.3.8",
+    "ejs": "^3.1.8",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-promise": "^6.0.0",
+    "esm": "^3.2.25",
+    "jsdom": "^20.0.0",
+    "mkdirp": "^1.0.4",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "stringify-object": "^3.3.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^26.0.0",
+    "svgo": "^2.8.0",
+    "svgson": "^5.2.1"
+  }
+}

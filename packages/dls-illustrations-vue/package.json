@@ -1,0 +1,48 @@
+{
+  "name": "dls-illustrations-vue",
+  "version": "1.2.0",
+  "description": "Baidu DLS illustrations for Vue.",
+  "scripts": {
+    "prepare": "pnpm build",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "illustrations",
+    "baidu",
+    "dls"
+  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "author": "Justineo (justice360@gmail.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecomfe/dls-illustrations.git",
+    "directory": "packages/dls-illustrations-vue"
+  },
+  "homepage": "https://github.com/ecomfe/dls-illustrations/tree/master/packages/dls-illustrations-vue/#readme",
+  "dependencies": {
+    "dls-graphics": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/plugin-proposal-export-default-from": "^7.17.12",
+    "@babel/preset-env": "^7.18.2",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "dls-graphics": "workspace:*",
+    "ejs": "^3.1.8",
+    "esm": "^3.2.25",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.7",
+    "rollup-plugin-auto-external": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
