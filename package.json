@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "bumpp": "^8.2.1",
+    "comment-mark": "^1.1.1",
     "cssnano": "^5.1.12",
     "dompurify": "^2.3.8",
     "ejs": "^3.1.8",

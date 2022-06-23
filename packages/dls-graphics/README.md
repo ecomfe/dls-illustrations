@@ -82,49 +82,51 @@ If you want to use SVGs with `<style>` contents extracted into separate CSS file
 
 ### List of available graphs
 
-<!-- assets-begin -->
+<!-- assets:start -->
+
 * **`blank`** (blank.svg)
 
-  ![blank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/blank.svg)
+  ![blank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/blank.svg)
 
 * **`forbidden`** (forbidden.svg)
 
-  ![forbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/forbidden.svg)
+  ![forbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/forbidden.svg)
 
 * **`imagePlaceholder`** (image-placeholder.svg)
 
-  ![imagePlaceholder](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/image-placeholder.svg)
+  ![imagePlaceholder](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/image-placeholder.svg)
 
 * **`loading`** (loading.svg)
 
-  ![loading](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/loading.svg)
+  ![loading](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/loading.svg)
 
 * **`notFound`** (not-found.svg)
 
-  ![notFound](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/not-found.svg)
+  ![notFound](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/not-found.svg)
 
 * **`partialBlankBrush`** (partial-blank-brush.svg)
 
-  ![partialBlankBrush](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/partial-blank-brush.svg)
+  ![partialBlankBrush](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-blank-brush.svg)
 
 * **`partialBlank`** (partial-blank.svg)
 
-  ![partialBlank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/partial-blank.svg)
+  ![partialBlank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-blank.svg)
 
 * **`partialError`** (partial-error.svg)
 
-  ![partialError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/partial-error.svg)
+  ![partialError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-error.svg)
 
 * **`partialForbidden`** (partial-forbidden.svg)
 
-  ![partialForbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/partial-forbidden.svg)
+  ![partialForbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-forbidden.svg)
 
 * **`serverError`** (server-error.svg)
 
-  ![serverError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/server-error.svg)
+  ![serverError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/server-error.svg)
 
 * **`underReview`** (under-review.svg)
 
-  ![underReview](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/under-review.svg)
+  ![underReview](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/under-review.svg)
 
-<!-- assets-end -->
+
+<!-- assets:end -->

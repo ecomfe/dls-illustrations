@@ -4,6 +4,7 @@ import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 import { compile } from 'ejs'
 import stringify from 'stringify-object'
+import commentMark from 'comment-mark'
 import { process } from './svg'
 import { camelCase } from '../utils'
 
@@ -22,7 +23,7 @@ const README_PATH = resolve(__dirname, '../../packages/dls-graphics/README.md')
 const ENTRY_MODULE = resolve(DATA_PACKAGE_DIST_DIR, 'index.js')
 const EXPORT_TPL = resolve(__dirname, './export.ejs')
 const BASE_PREVIEW_URL =
-  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/packages/dls-graphics/raw/'
+  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/'
 
 function clearDir(dir) {
   rimraf.sync(dir)
@@ -71,10 +72,9 @@ async function build() {
   const readme = await readFile(README_PATH, 'utf8')
   await writeFile(
     README_PATH,
-    readme.replace(
-      /<!-- assets-begin -->([\w\W]*?)<!-- assets-end -->/,
-      () => `<!-- assets-begin -->\n${toDoc(graphs)}\n<!-- assets-end -->`
-    )
+    commentMark(readme, {
+      assets: `\n${toDoc(graphs)}\n`
+    })
   )
 
   console.log('Build data complete.')

@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       bumpp: ^8.2.1
+      comment-mark: ^1.1.1
       cssnano: ^5.1.12
       dompurify: ^2.3.8
       ejs: ^3.1.8
@@ -28,6 +29,7 @@ importers:
       svgson: ^5.2.1
     devDependencies:
       bumpp: 8.2.1
+      comment-mark: 1.1.1
       cssnano: 5.1.12_postcss@8.4.14
       dompurify: 2.3.8
       ejs: 3.1.8
@@ -1934,6 +1936,10 @@ packages:
   /commander/7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
     engines: {node: '>= 10'}
+    dev: true
+
+  /comment-mark/1.1.1:
+    resolution: {integrity: sha512-KxFiXpu1/srgsSrftM/whqTpHZUX+BO3bgsToDNNJSqqsGP48sngnAIC+Cms+cCsDl9TQb7rlAVyfKDBdPQcaA==}
     dev: true
 
   /concat-map/0.0.1:

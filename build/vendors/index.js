@@ -4,10 +4,13 @@ import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 import { compile } from 'ejs'
 import { camelCase, upperFirst } from '../utils'
+import commentMark from 'comment-mark'
 
 const { readdir } = fs.promises
 
 const SVG_PATTERN = /^(.+)\.svg$/
+const BASE_PREVIEW_URL =
+  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/'
 
 const COMPONENT_TPL = fs.readFileSync(
   path.resolve(__dirname, './component.ejs'),
@@ -82,12 +85,30 @@ async function build() {
     illustrations.map((data) => renderExport(data)).join('') +
     `export { createSVG } from './core'\n`
 
+  const assets = toDoc(illustrations)
+
   VENDOR_PACKS.forEach((pack) => {
     const packDir = getPackDir(pack)
     fs.writeFileSync(path.join(packDir, 'src/index.js'), index, 'utf8')
+
+    const readmeFile = getPackDir(pack, 'README.md')
+    const readme = fs.readFileSync(readmeFile, 'utf8')
+    fs.writeFileSync(readmeFile, commentMark(readme, { assets }))
   })
 
   console.log('Build vendors complete.')
+}
+
+function toDoc(graphs) {
+  return graphs
+    .sort((a, b) => (a.Name >= b.Name ? 1 : -1))
+    .map(
+      ({ slug, Name }) => `* **\`Illustration${Name}\`**
+
+  ![Illustration${Name}](${BASE_PREVIEW_URL + slug + '.svg'})
+`
+    )
+    .join('\n')
 }
 
 export default build
