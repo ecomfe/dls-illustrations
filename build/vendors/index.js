@@ -99,16 +99,30 @@ async function build() {
   console.log('Build vendors complete.')
 }
 
-function toDoc(graphs) {
-  return graphs
-    .sort((a, b) => (a.Name >= b.Name ? 1 : -1))
-    .map(
-      ({ slug, Name }) => `* **\`Illustration${Name}\`**
+function toDoc(illustrations) {
+  const cols = 3
+  const items = illustrations.sort((a, b) => (a.Name >= b.Name ? 1 : -1))
 
-  ![Illustration${Name}](${BASE_PREVIEW_URL + slug + '.svg'})
-`
-    )
-    .join('\n')
+  const rows = Array.from({ length: Math.ceil(items.length / cols) })
+    .map((_, i) => {
+      return Array.from({ length: cols })
+        .map((_, j) => items[i * cols + j])
+        .map(
+          (item) =>
+            `<td align="center">${
+              item
+                ? `<img src="${
+                    BASE_PREVIEW_URL + item.slug + '.svg'
+                  }"/><br/><sub>Illustration${item.Name}</sub>`
+                : ''
+            }</td>`
+        )
+        .join('')
+    })
+    .map((row) => `<tr>${row}</tr>`)
+    .join('')
+
+  return `<table>${rows}</table>`
 }
 
 export default build

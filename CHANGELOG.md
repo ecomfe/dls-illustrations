@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.3.0-beta.1
+
+- Added `dls-illustrations-{react,vue,vue-3}`.
+
 ## 1.2.0
 
 - Added `under-review`.
