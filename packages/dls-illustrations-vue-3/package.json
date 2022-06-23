@@ -1,7 +1,7 @@
 {
-  "name": "dls-illustrations-vue",
+  "name": "dls-illustrations-vue-3",
   "version": "1.3.0-beta.0",
-  "description": "Baidu DLS illustrations for Vue.",
+  "description": "Baidu DLS illustrations for Vue 3.",
   "scripts": {
     "prepare": "pnpm build",
     "build": "rollup -c"
@@ -18,9 +18,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ecomfe/dls-illustrations.git",
-    "directory": "packages/dls-illustrations-vue"
+    "directory": "packages/dls-illustrations-vue-3"
   },
-  "homepage": "https://github.com/ecomfe/dls-illustrations/tree/master/packages/dls-illustrations-vue/#readme",
+  "homepage": "https://github.com/ecomfe/dls-illustrations/tree/master/packages/dls-illustrations-vue-3/#readme",
   "dependencies": {
     "dls-graphics": "workspace:*"
   },
