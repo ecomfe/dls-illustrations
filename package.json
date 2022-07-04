@@ -1,6 +1,6 @@
 {
   "name": "dls-illustrations",
-  "version": "1.3.0-beta.0",
+  "version": "1.3.0",
   "description": "Illustrations for Baidu Light DLS.",
   "scripts": {
     "prepare": "pnpm generate",
