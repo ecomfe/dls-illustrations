@@ -1,5 +1,11 @@
 > ⚠️ - Breaking Changes
 
+## 1.3.0
+
+- Deprecated `partial-{*}` and `under-review`.
+- Added spot level illustrations.
+- Added more hero level illustrations.
+
 ## 1.3.0-beta.1
 
 - Added `dls-illustrations-{react,vue,vue-3}`.
