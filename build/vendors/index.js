@@ -28,24 +28,36 @@ const VENDOR_PACKS = [
   'dls-illustrations-vue',
   'dls-illustrations-vue-3',
 ]
-const DATA_PACK = 'dls-graphics'
 
 function getPackDir(name, ...rest) {
   return path.resolve(__dirname, `../../packages/${name}`, ...rest)
 }
 
-const DATA_DIR = getPackDir(DATA_PACK, 'dist')
+const RAW_DIR = path.resolve(__dirname, '../../raw')
 
 function clearDir(dir) {
   rimraf.sync(dir)
   mkdirp.sync(dir)
 }
 
-async function getIllustrationSlugs() {
-  const fileNames = await readdir(DATA_DIR)
-  return fileNames
-    .filter((fileName) => SVG_PATTERN.test(fileName))
-    .map((fileName) => fileName.replace(SVG_PATTERN, '$1'))
+async function getIllustrations() {
+  const categories = await readdir(RAW_DIR)
+  const illustrations = await Promise.all(
+    categories
+      .filter((category) => !category.startsWith('.'))
+      .map(async (category) => {
+        const categoryDir = path.join(RAW_DIR, category)
+        const svgs = await readdir(categoryDir)
+        return svgs
+          .filter((svg) => SVG_PATTERN.test(svg))
+          .map((svg) => ({
+            slug: svg.replace(SVG_PATTERN, '$1'),
+            category,
+          }))
+      })
+  )
+
+  return illustrations.flat()
 }
 
 async function build() {
@@ -56,8 +68,8 @@ async function build() {
 
   const illustrations = await Promise.all(
     (
-      await getIllustrationSlugs()
-    ).map(async (slug) => {
+      await getIllustrations()
+    ).map(async ({ slug, category }) => {
       const name = camelCase(slug)
       const Name = upperFirst(name)
 
@@ -77,7 +89,7 @@ async function build() {
         )
       })
 
-      return { slug, name, Name }
+      return { slug, name, Name, category }
     })
   )
 
@@ -101,28 +113,46 @@ async function build() {
 
 function toDoc(illustrations) {
   const cols = 3
-  const items = illustrations.sort((a, b) => (a.Name >= b.Name ? 1 : -1))
 
-  const rows = Array.from({ length: Math.ceil(items.length / cols) })
-    .map((_, i) => {
-      return Array.from({ length: cols })
-        .map((_, j) => items[i * cols + j])
-        .map(
-          (item) =>
-            `<td align="center">${
+  const categories = {
+    hero: [],
+    spot: [],
+    misc: [],
+    deprecated: [],
+  }
+
+  illustrations.forEach((illustration) => {
+    const { category } = illustration
+    categories[category].push(illustration)
+  })
+
+  return Object.keys(categories)
+    .map((category) => {
+      const illustrations = categories[category]
+
+      const items = illustrations.sort((a, b) => (a.Name >= b.Name ? 1 : -1))
+
+      const rows = Array.from({ length: Math.ceil(items.length / cols) })
+        .map((_, i) => {
+          return Array.from({ length: cols })
+            .map((_, j) => items[i * cols + j])
+            .map((item) =>
               item
-                ? `<img src="${
+                ? `<td align="center"><img src="${
                     BASE_PREVIEW_URL + item.slug + '.svg'
-                  }"/><br/><sub>Illustration${item.Name}</sub>`
+                  }"/><br/><sub>Illustration${item.Name}</sub></td>`
+                : i > 0
+                ? '<td></td>'
                 : ''
-            }</td>`
-        )
+            )
+            .join('')
+        })
+        .map((row) => `<tr>${row}</tr>`)
         .join('')
-    })
-    .map((row) => `<tr>${row}</tr>`)
-    .join('')
 
-  return `<table>${rows}</table>`
+      return `### ${upperFirst(camelCase(category))}\n\n<table>${rows}</table>`
+    })
+    .join('\n\n')
 }
 
 export default build

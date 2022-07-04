@@ -6,7 +6,7 @@ import { compile } from 'ejs'
 import stringify from 'stringify-object'
 import commentMark from 'comment-mark'
 import { process } from './svg'
-import { camelCase } from '../utils'
+import { camelCase, upperFirst } from '../utils'
 
 const { readdir, readFile, writeFile } = fs.promises
 
@@ -23,7 +23,7 @@ const README_PATH = resolve(__dirname, '../../packages/dls-graphics/README.md')
 const ENTRY_MODULE = resolve(DATA_PACKAGE_DIST_DIR, 'index.js')
 const EXPORT_TPL = resolve(__dirname, './export.ejs')
 const BASE_PREVIEW_URL =
-  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/'
+  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw'
 
 function clearDir(dir) {
   rimraf.sync(dir)
@@ -37,12 +37,23 @@ async function build() {
   const exportStatements = []
   const graphs = []
   const renderExport = compile(await readFile(EXPORT_TPL, 'utf8'))
-  const files = await readdir(RAW_DIR)
+  const categories = (await readdir(RAW_DIR)).filter((c) => !c.startsWith('.'))
+
+  const files = await Promise.all(
+    categories.map(async (category) => {
+      const svgs = await readdir(resolve(RAW_DIR, category))
+      return svgs
+        .filter((svg) => !svg.startsWith('.'))
+        .map((svg) => ({
+          file: resolve(RAW_DIR, category, svg),
+          category,
+        }))
+    })
+  )
 
   await Promise.all(
-    files.map(async (file) => {
-      const inputFile = resolve(RAW_DIR, file)
-      const content = await readFile(inputFile, 'utf8')
+    files.flat().map(async ({ file, category }) => {
+      const content = await readFile(file, 'utf8')
 
       const { data: dataSingle } = await processContent(file, content, {
         extractCss: false,
@@ -54,7 +65,9 @@ async function build() {
       const variable = toVar(file)
       graphs.push({
         file,
+        fileName: basename(file),
         variable,
+        category,
       })
       exportStatements.push(
         renderExport({
@@ -67,13 +80,15 @@ async function build() {
     })
   )
 
+  assertUnique(graphs)
+
   await writeFile(ENTRY_MODULE, exportStatements.join('\n'), 'utf8')
 
   const readme = await readFile(README_PATH, 'utf8')
   await writeFile(
     README_PATH,
     commentMark(readme, {
-      assets: `\n${toDoc(graphs)}\n`
+      assets: `\n${toDoc(graphs)}\n`,
     })
   )
 
@@ -102,15 +117,45 @@ function toVar(file) {
 }
 
 function toDoc(graphs) {
-  return graphs
-    .sort((a, b) => (a.file >= b.file ? 1 : -1))
-    .map(
-      ({ file, variable }) => `* **\`${variable}\`** (${file})
+  const categories = {
+    hero: [],
+    spot: [],
+    misc: [],
+    deprecated: [],
+  }
 
-  ![${variable}](${BASE_PREVIEW_URL + file})
+  graphs.forEach((graph) => {
+    const { category } = graph
+    categories[category].push(graph)
+  })
+
+  return Object.keys(categories)
+    .map((category) => {
+      const graphs = categories[category]
+      const graphContents = graphs
+        .sort((a, b) => (a.file >= b.file ? 1 : -1))
+        .map(
+          ({ fileName, variable }) => `* **\`${variable}\`** (${fileName})
+
+  ![${variable}](${`${BASE_PREVIEW_URL}/${category}/${fileName}`})
 `
-    )
+        )
+        .join('\n')
+
+      return `#### ${upperFirst(camelCase(category))}\n\n${graphContents}`
+    })
     .join('\n')
+}
+
+function assertUnique(graphs) {
+  const map = new Map()
+  graphs.forEach(({ file }) => {
+    const name = basename(file)
+    if (map.has(name)) {
+      throw new Error(`Duplicate file:\n- ${file}\n- ${map.get(name)}`)
+    }
+    map.set(name, file)
+  })
 }
 
 export default build

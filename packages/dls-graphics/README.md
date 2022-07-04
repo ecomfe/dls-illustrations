@@ -84,49 +84,185 @@ If you want to use SVGs with `<style>` contents extracted into separate CSS file
 
 <!-- assets:start -->
 
+#### Hero
+
 * **`blank`** (blank.svg)
 
-  ![blank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/blank.svg)
+  ![blank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/blank.svg)
+
+* **`clientError`** (client-error.svg)
+
+  ![clientError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/client-error.svg)
 
 * **`forbidden`** (forbidden.svg)
 
-  ![forbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/forbidden.svg)
+  ![forbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/forbidden.svg)
 
-* **`imagePlaceholder`** (image-placeholder.svg)
+* **`noResults`** (no-results.svg)
 
-  ![imagePlaceholder](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/image-placeholder.svg)
-
-* **`loading`** (loading.svg)
-
-  ![loading](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/loading.svg)
+  ![noResults](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/no-results.svg)
 
 * **`notFound`** (not-found.svg)
 
-  ![notFound](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/not-found.svg)
+  ![notFound](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/not-found.svg)
 
-* **`partialBlankBrush`** (partial-blank-brush.svg)
+* **`reviewError`** (review-error.svg)
 
-  ![partialBlankBrush](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-blank-brush.svg)
+  ![reviewError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/review-error.svg)
 
-* **`partialBlank`** (partial-blank.svg)
+* **`reviewPending`** (review-pending.svg)
 
-  ![partialBlank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-blank.svg)
+  ![reviewPending](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/review-pending.svg)
 
-* **`partialError`** (partial-error.svg)
+* **`reviewSuccess`** (review-success.svg)
 
-  ![partialError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-error.svg)
-
-* **`partialForbidden`** (partial-forbidden.svg)
-
-  ![partialForbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/partial-forbidden.svg)
+  ![reviewSuccess](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/review-success.svg)
 
 * **`serverError`** (server-error.svg)
 
-  ![serverError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/server-error.svg)
+  ![serverError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/hero/server-error.svg)
+
+#### Spot
+
+* **`spotBarChart`** (spot-bar-chart.svg)
+
+  ![spotBarChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-bar-chart.svg)
+
+* **`spotCleared`** (spot-cleared.svg)
+
+  ![spotCleared](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-cleared.svg)
+
+* **`spotFunnelChart`** (spot-funnel-chart.svg)
+
+  ![spotFunnelChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-funnel-chart.svg)
+
+* **`spotGaugeChart`** (spot-gauge-chart.svg)
+
+  ![spotGaugeChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-gauge-chart.svg)
+
+* **`spotImageError`** (spot-image-error.svg)
+
+  ![spotImageError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-image-error.svg)
+
+* **`spotLineChart`** (spot-line-chart.svg)
+
+  ![spotLineChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-line-chart.svg)
+
+* **`spotLoadError`** (spot-load-error.svg)
+
+  ![spotLoadError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-load-error.svg)
+
+* **`spotMap`** (spot-map.svg)
+
+  ![spotMap](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-map.svg)
+
+* **`spotNetworkError`** (spot-network-error.svg)
+
+  ![spotNetworkError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-network-error.svg)
+
+* **`spotNoAccess`** (spot-no-access.svg)
+
+  ![spotNoAccess](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-access.svg)
+
+* **`spotNoContent`** (spot-no-content.svg)
+
+  ![spotNoContent](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-content.svg)
+
+* **`spotNoFavorites`** (spot-no-favorites.svg)
+
+  ![spotNoFavorites](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-favorites.svg)
+
+* **`spotNoHistory`** (spot-no-history.svg)
+
+  ![spotNoHistory](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-history.svg)
+
+* **`spotNoImage`** (spot-no-image.svg)
+
+  ![spotNoImage](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-image.svg)
+
+* **`spotNoInternet`** (spot-no-internet.svg)
+
+  ![spotNoInternet](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-internet.svg)
+
+* **`spotNoMessages`** (spot-no-messages.svg)
+
+  ![spotNoMessages](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-messages.svg)
+
+* **`spotNoResults`** (spot-no-results.svg)
+
+  ![spotNoResults](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-results.svg)
+
+* **`spotNoStore`** (spot-no-store.svg)
+
+  ![spotNoStore](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-store.svg)
+
+* **`spotNoVideo`** (spot-no-video.svg)
+
+  ![spotNoVideo](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-no-video.svg)
+
+* **`spotPieChart`** (spot-pie-chart.svg)
+
+  ![spotPieChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-pie-chart.svg)
+
+* **`spotPresentation`** (spot-presentation.svg)
+
+  ![spotPresentation](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-presentation.svg)
+
+* **`spotRadarChart`** (spot-radar-chart.svg)
+
+  ![spotRadarChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-radar-chart.svg)
+
+* **`spotRelationshipChart`** (spot-relationship-chart.svg)
+
+  ![spotRelationshipChart](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-relationship-chart.svg)
+
+* **`spotServerError`** (spot-server-error.svg)
+
+  ![spotServerError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-server-error.svg)
+
+* **`spotTryLater`** (spot-try-later.svg)
+
+  ![spotTryLater](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-try-later.svg)
+
+* **`spotVideoError`** (spot-video-error.svg)
+
+  ![spotVideoError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-video-error.svg)
+
+* **`spotWordCloud`** (spot-word-cloud.svg)
+
+  ![spotWordCloud](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/spot/spot-word-cloud.svg)
+
+#### Misc
+
+* **`imagePlaceholder`** (image-placeholder.svg)
+
+  ![imagePlaceholder](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/misc/image-placeholder.svg)
+
+* **`loading`** (loading.svg)
+
+  ![loading](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/misc/loading.svg)
+
+#### Deprecated
+
+* **`partialBlankBrush`** (partial-blank-brush.svg)
+
+  ![partialBlankBrush](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-blank-brush.svg)
+
+* **`partialBlank`** (partial-blank.svg)
+
+  ![partialBlank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-blank.svg)
+
+* **`partialError`** (partial-error.svg)
+
+  ![partialError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-error.svg)
+
+* **`partialForbidden`** (partial-forbidden.svg)
+
+  ![partialForbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-forbidden.svg)
 
 * **`underReview`** (under-review.svg)
 
-  ![underReview](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/under-review.svg)
+  ![underReview](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/under-review.svg)
 
 
 <!-- assets:end -->
