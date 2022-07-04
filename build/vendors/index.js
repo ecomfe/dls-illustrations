@@ -10,7 +10,7 @@ const { readdir } = fs.promises
 
 const SVG_PATTERN = /^(.+)\.svg$/
 const BASE_PREVIEW_URL =
-  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/'
+  'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw'
 
 const COMPONENT_TPL = fs.readFileSync(
   path.resolve(__dirname, './component.ejs'),
@@ -138,9 +138,9 @@ function toDoc(illustrations) {
             .map((_, j) => items[i * cols + j])
             .map((item) =>
               item
-                ? `<td align="center"><img src="${
-                    BASE_PREVIEW_URL + item.slug + '.svg'
-                  }"/><br/><sub>Illustration${item.Name}</sub></td>`
+                ? `<td align="center"><img src="${`${BASE_PREVIEW_URL}/${item.category}/${item.slug}.svg`}"/><br/><sub>Illustration${
+                    item.Name
+                  }</sub></td>`
                 : i > 0
                 ? '<td></td>'
                 : ''
