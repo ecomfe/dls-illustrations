@@ -1,6 +1,6 @@
 {
   "name": "dls-illustrations-vue",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Baidu DLS illustrations for Vue.",
   "scripts": {
     "prepare": "pnpm build",
