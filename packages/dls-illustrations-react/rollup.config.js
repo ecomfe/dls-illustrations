@@ -26,7 +26,7 @@ export default {
   plugins: [
     resolve(),
     babel(babelConfig),
-    autoExternal({ dependencies: false }),
+    autoExternal(),
   ],
   output: [
     {

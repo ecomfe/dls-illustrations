@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.3.2
+
+- Fixed rollup config and now the output depends on `dls-graphics`.
+
 ## 1.3.1
 
 - Fixed intrinsic class output for `dls-illustrations-vue`.
