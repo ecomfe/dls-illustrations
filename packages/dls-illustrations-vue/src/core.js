@@ -1,6 +1,9 @@
 import { escapeHTML } from '../../../src/utils'
 
-export function createSVG(name, { contents, attrs: intrinsicAttrs }) {
+export function createSVG(
+  name,
+  { contents, attrs: { class: className, ...intrinsicAttrs } }
+) {
   return {
     functional: true,
     name,
@@ -14,7 +17,7 @@ export function createSVG(name, { contents, attrs: intrinsicAttrs }) {
       const { tabindex } = attrs
 
       return h('svg', {
-        class: [staticClass, dynamicClass],
+        class: [className, staticClass, dynamicClass],
         attrs: {
           ...intrinsicAttrs,
           focusable: tabindex !== '0' ? 'false' : null,

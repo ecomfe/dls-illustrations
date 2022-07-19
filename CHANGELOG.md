@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.3.1
+
+- Fixed intrinsic class output for `dls-illustrations-vue`.
+
 ## 1.3.0
 
 - Deprecated `partial-{*}` and `under-review`.
