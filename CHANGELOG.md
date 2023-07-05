@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.3.3
+
+- Fixed `className` for React.
+
 ## 1.3.2
 
 - Fixed rollup config and now the output depends on `dls-graphics`.

@@ -1,6 +1,9 @@
 import { escapeHTML } from '../../../src/utils'
 
-export function createSVG(name, { contents, attrs: { class: classAttr, ...attrs } }) {
+export function createSVG(
+  name,
+  { contents, attrs: { class: classAttr, ...attrs } }
+) {
   const component = ({ title, className, ...props }) => {
     const { tabIndex } = props
     const markup = {
