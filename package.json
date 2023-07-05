@@ -4,6 +4,7 @@
   "description": "Illustrations for Baidu Light DLS.",
   "scripts": {
     "prepare": "pnpm generate",
+    "sync": "node -r esm build/sync.js",
     "generate": "node -r esm build",
     "build": "pnpm generate && pnpm -r build",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
