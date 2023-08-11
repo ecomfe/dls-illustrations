@@ -1,0 +1,14 @@
+import type {
+  ComponentPropsWithoutRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+  JSX
+} from 'react'
+
+interface IllustrationProps extends ComponentPropsWithoutRef<'svg'> {
+  title?: string
+}
+
+type Illustration = ForwardRefExoticComponent<IllustrationProps & RefAttributes<SVGSVGElement>>
+
+<%- exports %>

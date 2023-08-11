@@ -1,5 +1,10 @@
 > ⚠️ - Breaking Changes
 
+## 1.4.0
+
+- Added TypeScript support.
+- Added `forwardRef` support for React version.
+
 ## 1.3.3
 
 - Fixed `className` for React.

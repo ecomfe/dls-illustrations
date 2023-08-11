@@ -13,6 +13,7 @@
   ],
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "author": "Justineo (justice360@gmail.com)",
   "license": "MIT",
   "repository": {

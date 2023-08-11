@@ -21,7 +21,10 @@ const DATA_PACKAGE_DIST_SEPARATE_DIR = resolve(
 )
 const README_PATH = resolve(__dirname, '../../packages/dls-graphics/README.md')
 const ENTRY_MODULE = resolve(DATA_PACKAGE_DIST_DIR, 'index.js')
+const TYPE_ENTRY_MODULE = resolve(DATA_PACKAGE_DIST_DIR, 'index.d.ts')
 const EXPORT_TPL = resolve(__dirname, './export.ejs')
+const TYPE_EXPORT_TPL = resolve(__dirname, './type-export.ejs')
+const TTPE_INDEX_TPL = resolve(__dirname, './type-index.ejs')
 const BASE_PREVIEW_URL =
   'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw'
 
@@ -35,8 +38,11 @@ async function build() {
   clearDir(DATA_PACKAGE_DIST_SEPARATE_DIR)
 
   const exportStatements = []
+  const typeExportStatements = []
   const graphs = []
   const renderExport = compile(await readFile(EXPORT_TPL, 'utf8'))
+  const renderTypeExport = compile(await readFile(TYPE_EXPORT_TPL, 'utf8'))
+  const renderTypeIndex = compile(await readFile(TTPE_INDEX_TPL, 'utf8'))
   const categories = (await readdir(RAW_DIR)).filter((c) => !c.startsWith('.'))
 
   const files = await Promise.all(
@@ -77,12 +83,20 @@ async function build() {
           css: stringify(css || ''),
         })
       )
+      typeExportStatements.push(renderTypeExport({ variable }))
     })
   )
 
   assertUnique(graphs)
 
   await writeFile(ENTRY_MODULE, exportStatements.join('\n'), 'utf8')
+  await writeFile(
+    TYPE_ENTRY_MODULE,
+    renderTypeIndex({
+      exports: typeExportStatements.join('\n'),
+    }),
+    'utf8'
+  )
 
   const readme = await readFile(README_PATH, 'utf8')
   await writeFile(

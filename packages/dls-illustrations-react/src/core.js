@@ -1,10 +1,11 @@
+import { forwardRef } from 'react'
 import { escapeHTML } from '../../../src/utils'
 
 export function createSVG(
   name,
   { contents, attrs: { class: classAttr, ...attrs } }
 ) {
-  const component = ({ title, className, ...props }) => {
+  const Illustration = forwardRef(({ title, className, ...props }, ref) => {
     const { tabIndex } = props
     const markup = {
       __html: (title ? `<title>${escapeHTML(title)}</title>` : '') + contents,
@@ -16,12 +17,13 @@ export function createSVG(
         {...attrs}
         focusable={tabIndex !== '0' ? false : null}
         dangerouslySetInnerHTML={markup}
+        ref={ref}
         {...props}
       />
     )
-  }
+  })
 
-  component.displayName = name
+  Illustration.displayName = name
 
-  return component
+  return Illustration
 }

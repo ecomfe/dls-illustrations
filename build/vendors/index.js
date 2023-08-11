@@ -6,20 +6,23 @@ import { compile } from 'ejs'
 import { camelCase, upperFirst } from '../utils'
 import commentMark from 'comment-mark'
 
+function readFile(...parts) {
+  return fs.readFileSync(path.resolve(__dirname, ...parts), 'utf-8')
+}
+
+function writeFile(content, ...parts) {
+  return fs.writeFileSync(path.resolve(__dirname, ...parts), content, 'utf-8')
+}
+
 const { readdir } = fs.promises
 
 const SVG_PATTERN = /^(.+)\.svg$/
 const BASE_PREVIEW_URL =
   'https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw'
 
-const COMPONENT_TPL = fs.readFileSync(
-  path.resolve(__dirname, './component.ejs'),
-  'utf8'
-)
-const EXPORT_TPL = fs.readFileSync(
-  path.resolve(__dirname, './export.ejs'),
-  'utf8'
-)
+const COMPONENT_TPL = readFile('./component.ejs')
+const EXPORT_TPL = readFile('./export.ejs')
+
 const renderComponent = compile(COMPONENT_TPL)
 const renderExport = compile(EXPORT_TPL)
 
@@ -29,8 +32,19 @@ const VENDOR_PACKS = [
   'dls-illustrations-vue-3',
 ]
 
-function getPackDir(name, ...rest) {
-  return path.resolve(__dirname, `../../packages/${name}`, ...rest)
+const TYPES_REACT_INDEX_TPL = readFile('./react-type-index.ejs')
+const TYPES_REACT_TPL = readFile('./react-type.ejs')
+const TYPES_VUE_INDEX_TPL = readFile('./vue-type-index.ejs')
+const TYPES_VUE_TPL = readFile('./vue-type.ejs')
+
+const TYPINGS_TPL_MAP = {
+  'dls-illustrations-react': [TYPES_REACT_INDEX_TPL, TYPES_REACT_TPL],
+  'dls-illustrations-vue': [TYPES_VUE_INDEX_TPL, TYPES_VUE_TPL],
+  'dls-illustrations-vue-3': [TYPES_VUE_INDEX_TPL, TYPES_VUE_TPL],
+}
+
+function getPackDir(...parts) {
+  return path.resolve(__dirname, '../../packages', ...parts)
 }
 
 const RAW_DIR = path.resolve(__dirname, '../../raw')
@@ -62,7 +76,7 @@ async function getIllustrations() {
 
 async function build() {
   VENDOR_PACKS.forEach((pack) => {
-    const illustrationDir = path.join(getPackDir(pack), 'src/illustrations')
+    const illustrationDir = getPackDir(pack, 'src/illustrations')
     clearDir(illustrationDir)
   })
 
@@ -81,12 +95,8 @@ async function build() {
       const componentCode = renderComponent(tplData)
 
       VENDOR_PACKS.forEach((pack) => {
-        const illustrationDir = path.join(getPackDir(pack), 'src/illustrations')
-        fs.writeFileSync(
-          path.join(illustrationDir, `${Name}.js`),
-          componentCode,
-          'utf8'
-        )
+        const illustrationDir = getPackDir(pack, 'src/illustrations')
+        writeFile(componentCode, illustrationDir, `${Name}.js`)
       })
 
       return { slug, name, Name, category }
@@ -101,11 +111,18 @@ async function build() {
 
   VENDOR_PACKS.forEach((pack) => {
     const packDir = getPackDir(pack)
-    fs.writeFileSync(path.join(packDir, 'src/index.js'), index, 'utf8')
+    writeFile(index, packDir, 'src/index.js')
+
+    const [typesIndexTpl, typesTpl] = TYPINGS_TPL_MAP[pack]
+    const renderTypesIndex = compile(typesIndexTpl)
+    const renderTypes = compile(typesTpl)
+    const types = illustrations.map(({ Name }) => renderTypes({ Name })).join('')
+    const typesIndex = renderTypesIndex({ exports: types })
+    writeFile(typesIndex, packDir, 'dist/index.d.ts')
 
     const readmeFile = getPackDir(pack, 'README.md')
     const readme = fs.readFileSync(readmeFile, 'utf8')
-    fs.writeFileSync(readmeFile, commentMark(readme, { assets }))
+    writeFile(commentMark(readme, { assets }), readmeFile)
   })
 
   console.log('Build vendors complete.')
