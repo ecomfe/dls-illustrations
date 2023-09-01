@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.4.1
+
+- Added instance IDs to prevent conflict.
+
 ## 1.4.0
 
 - Added TypeScript support.
