@@ -81,13 +81,16 @@ export async function process(content, { extractCss = false }) {
     const { xmlns, ...attrs } = { ...el.attributes }
     const data = {
       contents: svg.replace(STRIP_ROOT_RE, ''),
-      attrs,
+      attrs: {
+        ...attrs,
+        id
+      },
     }
 
     return {
       svg,
       css,
-      data,
+      data
     }
   } catch (e) {
     console.error(e)
