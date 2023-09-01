@@ -1,6 +1,6 @@
 {
   "name": "dls-illustrations-react",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Baidu DLS illustrations for React.",
   "scripts": {
     "prepare": "pnpm build",
