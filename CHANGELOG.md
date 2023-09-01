@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.4.2
+
+- Fixed Vue version.
+
 ## 1.4.1
 
 - Added instance IDs to prevent conflict.
