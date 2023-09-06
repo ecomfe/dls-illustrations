@@ -1,5 +1,9 @@
 > ⚠️ - Breaking Changes
 
+## 1.4.3
+
+- Switched to nanoid/non-secure so that we no longer depend on execution environment. Fixed that the Node `crypto` module is imported in our dist files.
+
 ## 1.4.2
 
 - Fixed Vue version.
