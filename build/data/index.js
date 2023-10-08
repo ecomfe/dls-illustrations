@@ -5,12 +5,14 @@ import rimraf from 'rimraf'
 import { compile } from 'ejs'
 import stringify from 'stringify-object'
 import commentMark from 'comment-mark'
-import { process } from './svg'
+import { process as processSvg } from './svg'
 import { camelCase, upperFirst } from '../utils'
 
 const { readdir, readFile, writeFile } = fs.promises
 
+const ENDPOINT = process.env.DLS_ILLUSTRATIONS_API
 const RAW_DIR = resolve(__dirname, '../../raw')
+const META_FILE = resolve(__dirname, 'meta.json')
 const DATA_PACKAGE_DIST_DIR = resolve(
   __dirname,
   '../../packages/dls-graphics/dist'
@@ -33,6 +35,32 @@ function clearDir(dir) {
   mkdirp.sync(dir)
 }
 
+async function getRawFiles() {
+  let metadata
+  if (ENDPOINT) {
+    metadata = await fetch(ENDPOINT).then((res) => res.text())
+    await writeFile(META_FILE, metadata, 'utf8')
+  } else {
+    try {
+      metadata = await readFile(META_FILE, 'utf8')
+    } catch (e) {
+      console.error(
+        'No local `meta.json` found. You must specify an `ENDPOINT`.'
+      )
+      process.exit(1)
+    }
+  }
+
+  const { data } = JSON.parse(metadata)
+  clearDir(RAW_DIR)
+  data.forEach(({ label, svg, category }) => {
+    const dir = resolve(RAW_DIR, category)
+    mkdirp.sync(dir)
+    const file = resolve(dir, `${label}.svg`)
+    writeFile(file, svg, 'utf8')
+  })
+}
+
 async function build() {
   clearDir(DATA_PACKAGE_DIST_DIR)
   clearDir(DATA_PACKAGE_DIST_SEPARATE_DIR)
@@ -44,6 +72,8 @@ async function build() {
   const renderTypeExport = compile(await readFile(TYPE_EXPORT_TPL, 'utf8'))
   const renderTypeIndex = compile(await readFile(TTPE_INDEX_TPL, 'utf8'))
   const categories = (await readdir(RAW_DIR)).filter((c) => !c.startsWith('.'))
+
+  await getRawFiles()
 
   const files = await Promise.all(
     categories.map(async (category) => {
@@ -83,7 +113,12 @@ async function build() {
           css: stringify(css || ''),
         })
       )
-      typeExportStatements.push(renderTypeExport({ variable }))
+      typeExportStatements.push(
+        renderTypeExport({
+          variable,
+          annotations: category === 'deprecated' ? '/** @deprecated */\n' : '',
+        })
+      )
     })
   )
 
@@ -110,7 +145,7 @@ async function build() {
 }
 
 async function processContent(file, content, { extractCss }) {
-  const result = await process(content, { extractCss })
+  const result = await processSvg(content, { extractCss })
   const { svg, css } = result
   const base = basename(file, extname(file))
   const outputDir = extractCss
@@ -140,6 +175,9 @@ function toDoc(graphs) {
 
   graphs.forEach((graph) => {
     const { category } = graph
+    if (!categories[category]) {
+      categories[category] = []
+    }
     categories[category].push(graph)
   })
 

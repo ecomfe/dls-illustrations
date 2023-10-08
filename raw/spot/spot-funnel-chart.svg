@@ -1,16 +1,1 @@
-<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129; Empty state/&#229;&#155;&#190;&#232;&#161;&#168;&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129;/&#230;&#188;&#143;&#230;&#150;&#151;&#229;&#155;&#190;">
-<g id="Group 3465629">
-<mask id="mask0_6140_220458" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="13" width="64" height="54">
-<path id="Rectangle 34624064" d="M8.09961 13.6H71.8996L46.8142 66.4H33.185L8.09961 13.6Z" fill="#C4C4C4"/>
-</mask>
-<g mask="url(#mask0_6140_220458)">
-<g id="Group 3465731">
-<path id="Rectangle 3469109" d="M8.09961 14.7H71.8996V30.1H8.09961V14.7Z" fill="#0066FF"/>
-<path id="Rectangle 3469110" d="M8.09961 32.2999H71.8996V47.6999H8.09961V32.2999Z" fill="#D3D8EA"/>
-<path id="Rectangle 3469111" d="M8.09961 49.8998H71.8996V65.2998H8.09961V49.8998Z" fill="#E3E7F5"/>
-</g>
-</g>
-</g>
-</g>
-</svg>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ç©ºç¶æ Empty state/å¾è¡¨ç©ºç¶æ/æ¼æå¾"><g id="Group 3465629"><mask id="mask0_6140_220458" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="13" width="64" height="54"><path id="Rectangle 34624064" d="M8.1 13.6h63.8L46.814 66.4H33.185L8.1 13.6z" fill="#C4C4C4"/></mask><g mask="url(#mask0_6140_220458)"><g id="Group 3465731"><path id="Rectangle 3469109" d="M8.1 14.7h63.8v15.4H8.1V14.7z" fill="#06F"/><path id="Rectangle 3469110" d="M8.1 32.3h63.8v15.4H8.1V32.3z" fill="#D3D8EA"/><path id="Rectangle 3469111" d="M8.1 49.9h63.8v15.4H8.1V49.9z" fill="#E3E7F5"/></g></g></g></g></svg>

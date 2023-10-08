@@ -1,12 +1,1 @@
-<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129; Empty state/&#229;&#155;&#190;&#232;&#161;&#168;&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129;/&#233;&#165;&#188;&#229;&#155;&#190;">
-<g id="Group 427318937">
-<path id="Ellipse 1" d="M62.8337 40.3692C62.8337 53.3295 52.3273 63.8359 39.3671 63.8359C26.4068 63.8359 15.9004 53.3295 15.9004 40.3692C15.9004 27.4089 26.4068 16.9025 39.3671 16.9025" stroke="#E3E7F5" stroke-width="15.4"/>
-<path id="Ellipse 3" d="M56.5387 24.2457C65.3776 33.7243 64.8591 48.5735 55.3805 57.4124" stroke="#D3D8EA" stroke-width="15.4"/>
-<path id="Ellipse 2" d="M39.3654 16.9025C52.3256 16.9025 62.832 27.4089 62.832 40.3692" stroke="#0066FF" stroke-width="18.7"/>
-<rect id="Rectangle 34624108" x="37.166" y="4.06909" width="2.2" height="28.6" fill="white"/>
-<rect id="Rectangle 34624109" x="76.7676" y="40.3691" width="2.2" height="28.6" transform="rotate(90 76.7676 40.3691)" fill="white"/>
-<rect id="Rectangle 34624110" x="64.5898" y="67.0734" width="2.2" height="28.6" transform="rotate(137.851 64.5898 67.0734)" fill="white"/>
-</g>
-</g>
-</svg>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ç©ºç¶æ Empty state/å¾è¡¨ç©ºç¶æ/é¥¼å¾"><g id="Group 427318937"><path id="Ellipse 1" d="M62.834 40.37c0 12.96-10.507 23.466-23.467 23.466-12.96 0-23.467-10.506-23.467-23.467 0-12.96 10.507-23.466 23.467-23.466" stroke="#E3E7F5" stroke-width="15.4"/><path id="Ellipse 3" d="M56.539 24.246c8.839 9.478 8.32 24.328-1.159 33.166" stroke="#D3D8EA" stroke-width="15.4"/><path id="Ellipse 2" d="M39.365 16.902c12.96 0 23.467 10.507 23.467 23.467" stroke="#06F" stroke-width="18.7"/><path id="Rectangle 34624108" fill="#fff" d="M37.166 4.069H39.366V32.669000000000004H37.166z"/><path id="Rectangle 34624109" transform="rotate(90 76.768 40.37)" fill="#fff" d="M76.768 40.369H78.968V68.969H76.768z"/><path id="Rectangle 34624110" transform="rotate(137.851 64.59 67.073)" fill="#fff" d="M64.59 67.073H66.79V95.673H64.59z"/></g></g></svg>

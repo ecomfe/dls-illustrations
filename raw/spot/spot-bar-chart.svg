@@ -1,13 +1,1 @@
-<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129; Empty state/&#229;&#155;&#190;&#232;&#161;&#168;&#231;&#169;&#186;&#231;&#138;&#182;&#230;&#128;&#129;/&#230;&#159;&#177;&#231;&#138;&#182;&#229;&#155;&#190;">
-<g id="Group 427318935">
-<path id="Vector 3" d="M12.5 26.85H74.1" stroke="#E3E7F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.5 3.3"/>
-<path id="Vector 4" d="M12.5 47.3832H74.1" stroke="#E3E7F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.5 3.3"/>
-<path id="Vector 147" d="M30.0984 42.8H16.8984V59.85H30.0984V42.8Z" fill="#E3E7F5"/>
-<path id="Vector 149" d="M63.0984 18.05H49.8984V59.85H63.0984V18.05Z" fill="#E3E7F5"/>
-<path id="Vector 148" d="M46.5984 33.45H33.3984V59.85H46.5984V33.45Z" fill="#0066FF"/>
-<path id="Rectangle 3469108" d="M3.69922 16.95C3.69922 15.735 4.68419 14.75 5.89922 14.75C7.11425 14.75 8.09922 15.735 8.09922 16.95V59.85H3.69922V16.95Z" fill="#CED4EA"/>
-<path id="Rectangle 3469109" d="M3.69922 59.85H74.0992C75.3143 59.85 76.2992 60.8349 76.2992 62.05C76.2992 63.265 75.3142 64.25 74.0992 64.25H8.09921C5.66916 64.25 3.69922 62.28 3.69922 59.85Z" fill="#CED4EA"/>
-</g>
-</g>
-</svg>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="ç©ºç¶æ Empty state/å¾è¡¨ç©ºç¶æ/æ±ç¶å¾"><g id="Group 427318935"><path id="Vector 3" d="M12.5 26.85h61.6" stroke="#E3E7F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.5 3.3"/><path id="Vector 4" d="M12.5 47.383h61.6" stroke="#E3E7F5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.5 3.3"/><path id="Vector 147" d="M30.098 42.8h-13.2v17.05h13.2V42.8z" fill="#E3E7F5"/><path id="Vector 149" d="M63.098 18.05h-13.2v41.8h13.2v-41.8z" fill="#E3E7F5"/><path id="Vector 148" d="M46.598 33.45h-13.2v26.4h13.2v-26.4z" fill="#06F"/><path id="Rectangle 3469108" d="M3.7 16.95a2.2 2.2 0 0 1 4.4 0v42.9H3.7v-42.9z" fill="#CED4EA"/><path id="Rectangle 3469109" d="M3.7 59.85h70.4a2.2 2.2 0 1 1 0 4.4h-66a4.4 4.4 0 0 1-4.4-4.4z" fill="#CED4EA"/></g></g></svg>

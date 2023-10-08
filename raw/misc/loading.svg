@@ -1,21 +1,4 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  class="dls-loading"
-  width="40"
-  height="40"
-  viewBox="0 0 64 64"
->
-  <circle
-    cx="50%"
-    cy="50%"
-    r="29"
-    fill="none"
-    stroke-width="6"
-    stroke-linecap="round"
-    stroke="currentColor"
-  />
-  <style>
-    .dls-loading circle {
+<svg xmlns="http://www.w3.org/2000/svg" class="dls-loading" width="40" height="40" viewBox="0 0 64 64"><circle cx="50%" cy="50%" r="29" fill="none" stroke-width="6" stroke-linecap="round" stroke="currentColor"/><style>.dls-loading circle {
       transform-origin: 50% 50%;
       stroke-dasharray: 182.21;
       animation: 2s infinite chase linear;
@@ -51,6 +34,4 @@
     _:-ms-lang(x),
     .dls-loading circle {
       stroke-dashoffset: 136.66;
-    }
-  </style>
-</svg>
+    }</style></svg>

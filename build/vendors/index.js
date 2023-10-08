@@ -116,7 +116,14 @@ async function build() {
     const [typesIndexTpl, typesTpl] = TYPINGS_TPL_MAP[pack]
     const renderTypesIndex = compile(typesIndexTpl)
     const renderTypes = compile(typesTpl)
-    const types = illustrations.map(({ Name }) => renderTypes({ Name })).join('')
+    const types = illustrations
+      .map(({ Name, category }) =>
+        renderTypes({
+          Name,
+          annotations: category === 'deprecated' ? '/** @deprecated */\n' : '',
+        })
+      )
+      .join('')
     const typesIndex = renderTypesIndex({ exports: types })
     writeFile(typesIndex, packDir, 'dist/index.d.ts')
 
@@ -140,6 +147,9 @@ function toDoc(illustrations) {
 
   illustrations.forEach((illustration) => {
     const { category } = illustration
+    if (!categories[category]) {
+      categories[category] = []
+    }
     categories[category].push(illustration)
   })
 
