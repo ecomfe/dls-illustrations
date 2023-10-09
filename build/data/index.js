@@ -6,7 +6,7 @@ import { compile } from 'ejs'
 import stringify from 'stringify-object'
 import commentMark from 'comment-mark'
 import { process as processSvg } from './svg'
-import { camelCase, upperFirst } from '../utils'
+import { camelCase, decorateDeprecated, upperFirst } from '../utils'
 
 const { readdir, readFile, writeFile } = fs.promises
 
@@ -187,7 +187,10 @@ function toDoc(graphs) {
       const graphContents = graphs
         .sort((a, b) => (a.file >= b.file ? 1 : -1))
         .map(
-          ({ fileName, variable }) => `* **\`${variable}\`** (${fileName})
+          ({ fileName, variable }) => `* ${decorateDeprecated(
+            `**\`${variable}\`**`,
+            category === 'deprecated'
+          )} (${fileName})
 
   ![${variable}](${`${BASE_PREVIEW_URL}/${category}/${fileName}`})
 `

@@ -7,3 +7,8 @@ export function camelCase(str) {
 export function upperFirst(str) {
   return str.replace(/^\w/, (m) => m.toUpperCase())
 }
+
+export function decorateDeprecated(content, deprecated, html = false) {
+  const [start, end] = html ? ['<s>', '</s>'] : ['~', '~']
+  return `${deprecated ? start : ''}${content}${deprecated ? end : ''}`
+}

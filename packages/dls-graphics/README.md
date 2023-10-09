@@ -244,23 +244,23 @@ If you want to use SVGs with `<style>` contents extracted into separate CSS file
 
 #### Deprecated
 
-* **`partialBlankBrush`** (partial-blank-brush.svg)
+* ~**`partialBlankBrush`**~ (partial-blank-brush.svg)
 
   ![partialBlankBrush](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-blank-brush.svg)
 
-* **`partialBlank`** (partial-blank.svg)
+* ~**`partialBlank`**~ (partial-blank.svg)
 
   ![partialBlank](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-blank.svg)
 
-* **`partialError`** (partial-error.svg)
+* ~**`partialError`**~ (partial-error.svg)
 
   ![partialError](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-error.svg)
 
-* **`partialForbidden`** (partial-forbidden.svg)
+* ~**`partialForbidden`**~ (partial-forbidden.svg)
 
   ![partialForbidden](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/partial-forbidden.svg)
 
-* **`underReview`** (under-review.svg)
+* ~**`underReview`**~ (under-review.svg)
 
   ![underReview](https://raw.githubusercontent.com/ecomfe/dls-illustrations/master/raw/deprecated/under-review.svg)
 

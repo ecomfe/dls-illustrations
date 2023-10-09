@@ -3,7 +3,7 @@ import path from 'path'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'
 import { compile } from 'ejs'
-import { camelCase, upperFirst } from '../utils'
+import { camelCase, decorateDeprecated, upperFirst } from '../utils'
 import commentMark from 'comment-mark'
 
 function readFile(...parts) {
@@ -165,9 +165,11 @@ function toDoc(illustrations) {
             .map((_, j) => items[i * cols + j])
             .map((item) =>
               item
-                ? `<td align="center"><img src="${`${BASE_PREVIEW_URL}/${item.category}/${item.slug}.svg`}"/><br/><sub>Illustration${
-                    item.Name
-                  }</sub></td>`
+                ? `<td align="center"><img src="${`${BASE_PREVIEW_URL}/${item.category}/${item.slug}.svg`}"/><br/><sub>${decorateDeprecated(
+                    `Illustration${item.Name}`,
+                    item.category === 'deprecated',
+                    true
+                  )}</sub></td>`
                 : i > 0
                 ? '<td></td>'
                 : ''
